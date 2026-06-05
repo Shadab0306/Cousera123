@@ -1,4 +1,224 @@
+/* CSS Reset & Design Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #fcfbfa;
+    --text-main: #2c2c2c;
+    --text-muted: #6e6e6e;
+    --accent-color: #c5a880; /* Elegant gold/bronze tone */
+    --card-bg: #ffffff;
+}
+
 body {
-	color: pink;
-	font-size: 50px; 
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Navigation Bar Layout */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    border-bottom: 1px solid #eee;
+    background: var(--card-bg);
+    position: relative;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+/* Hide checkbox used for toggle logic */
+#menu-toggle {
+    display: none;
+}
+
+/* Hamburger Icon Layout */
+.hamburger-label {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.hamburger-label span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+/* Base Navigation Links (Desktop) */
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Main Content Wrapper */
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.menu-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.menu-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+    margin: 0.5rem auto 0;
+}
+
+/* Three-Column Responsive Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Elevated Menu Card Designs */
+.menu-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Keeps the container at a fixed height and clips any image overflow */
+.card-image {
+    height: 220px;
+    background-color: #eae6df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    overflow: hidden; /* Fixes rounded corner clipping */
+}
+
+/* Forces the image to behave like a background cover */
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image perfectly to fit the 220px box */
+}
+
+.card-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.item-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.item-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   RESPONSIVE HAMBURGER DROPDOWN BREAKPOINT (Max-width: 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+    header {
+        padding: 1.5rem 5%;
+    }
+
+    /* Show the hamburger icon lines on mobile views */
+    .hamburger-label {
+        display: flex;
+    }
+
+    /* Convert standard navigation links into a stacked, hidden dropdown */
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--card-bg);
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 1px solid #eee;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        z-index: 5;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        border-top: 1px solid #f9f9f9;
+    }
+
+    /* Trigger layout changes when invisible checkbox is active */
+    #menu-toggle:checked ~ nav {
+        max-height: 300px; /* Expands dropdown beautifully */
+    }
+
+    /* Morph hamburger bars into an 'X' icon when open */
+    #menu-toggle:checked ~ .hamburger-label span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #menu-toggle:checked ~ .hamburger-label span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked ~ .hamburger-label span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }

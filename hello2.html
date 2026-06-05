@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu</title>
+    <!-- Modern Typography Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="brand-name">FOOD,LLC</div>
+        
+        <!-- Toggle System Intermediaries -->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <!-- Dropdown Menu Links -->
+        <nav>
+            <a href="#chicken">Chicken</a>
+            <a href="#beef">Beef</a>
+            <a href="#sushi">Sushi</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="menu-container">
+        <h1 class="menu-title">Our Menu</h1>
+        
+        <div class="menu-grid">
+            <!-- Chicken Card -->
+            <article class="menu-card" id="chicken">
+                <div class="card-image">
+                    <img src="chicken.avif" alt="Roasted Chicken Dish">
+                </div>
+                <div class="card-content">
+                    <h2 class="item-title">🍗 Chicken</h2>
+                    <p class="item-description">Chicken is a highly versatile, globally popular lean protein known for its mild flavor that easily absorbs various marinades, herbs, and spices. The white meat, such as the breast, is exceptionally low in fat and packed with essential B vitamins, making it a staple for healthy cooking methods like grilling or stir-frying. Meanwhile, the darker cuts, like thighs and drumsticks, contain more intramuscular fat, which retains moisture during slower cooking processes like roasting or braising to deliver a much juicier and richer taste profile.</p>
+                </div>
+            </article>
+
+            <!-- Beef Card -->
+            <article class="menu-card" id="beef">
+                <div class="card-image">
+                    <img src="beef.jpg" alt="Beef Stew Dish">
+                </div>
+                <div class="card-content">
+                    <h2 class="item-title">🥩 Beef</h2>
+                    <p class="item-description">Beef provides a robust, umami-rich dining experience, with its final tenderness and depth of flavor relying heavily on the level of intramuscular fat marbling throughout the meat. It serves as a nutrient-dense dietary powerhouses, delivering high-quality complete protein alongside highly bioavailable iron, zinc, and vitamin B12. Tender cuts like ribeye or filet mignon excel when cooked quickly over intense, direct heat to sear the exterior, whereas tougher, collagen-rich cuts like chuck or brisket require patient, low-and-slow braising to break down into melt-in-your-mouth stews.</p>
+                </div>
+            </article>
+
+            <!-- Sushi Card -->
+            <article class="menu-card" id="sushi">
+                <div class="card-image">
+                    <img src="sushi.jpg" alt="Sushi Dish">
+                </div>
+                <div class="card-content">
+                    <h2 class="item-title">🍣 Sushi</h2>
+                    <p class="item-description">Sushi is a refined Japanese culinary tradition centered around shari, which is high-quality short-grain rice seasoned with a delicate blend of rice vinegar, sugar, and salt. This tangy, sweet rice base is artfully balanced by toppings of ultra-fresh raw or cooked seafood, crisp vegetables, and savory sheets of toasted nori seaweed. When prepared using pristine cuts of oily fish like salmon, mackerel, or tuna, it functions as a remarkably clean, low-calorie meal that is naturally packed with heart-healthy Omega-3 fatty acids.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+</body>
+</html>
